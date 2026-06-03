@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larissa Scariel — Portfólio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a2e;
+    --ink-soft: #555;
+    --ink-muted: #999;
+    --accent: #9b5de5;
+    --accent-light: #f3ecff;
+    --accent2: #f15bb5;
+    --bg: #fafaf8;
+    --white: #fff;
+    --border: rgba(0,0,0,0.08);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 6rem 4rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(155,93,229,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(155,93,229,0.3); }
+  .btn-ghost {
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    padding: 12px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* STATS panel */
+  .hero-stats {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+  }
+  .hero-stats::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(155,93,229,0.15), rgba(241,91,181,0.1));
+    z-index: -1;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-number span { color: var(--accent); }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+  .stat-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--border);
+    margin: -0.5rem 0;
+  }
+  .skills-row {
+    grid-column: 1 / -1;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 6rem; }
+  section:nth-child(even) { background: var(--white); }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--ink-soft);
+    max-width: 560px;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  /* WORK GRID */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .work-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+  }
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  }
+  .card-thumb {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-thumb.purple { background: linear-gradient(135deg, #f3ecff, #e8d5ff); }
+  .card-thumb.pink { background: linear-gradient(135deg, #fde8f5, #f9d0ec); }
+  .card-thumb.blue { background: linear-gradient(135deg, #e8f0ff, #d5e3ff); }
+  .card-thumb.green { background: linear-gradient(135deg, #e8f5ec, #d5eddb); }
+  .card-type {
+    position: absolute; top: 12px; left: 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.85);
+    padding: 3px 10px;
+    border-radius: 100px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .card-body { padding: 1.5rem; flex: 1; }
+  .card-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .card-body p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .card-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .card-link::after { content: '→'; }
+
+  /* NUMBERS */
+  .numbers-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .num-card {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+  }
+  .num-big {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .num-big span { color: var(--accent); }
+  .num-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.4; }
+
+  /* TOOLS */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .tool-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tool-item:hover { border-color: var(--accent); color: var(--accent); }
+  .tool-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .footer-name {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 1.2rem;
+  }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* FADE IN */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 100px 2rem 4rem; }
+    section { padding: 4rem 2rem; }
+    .numbers-row { grid-template-columns: 1fr 1fr; }
+    footer { padding: 2rem; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Larissa Scariel</a>
+  <ul class="nav-links">
+    <li><a href="#trabalhos">Trabalhos</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#ferramentas">Ferramentas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="fade-up">
+    <span class="hero-tag">Portfólio — 2025</span>
+    <h1>Palavras que<br><em>constroem presença</em><br>digital.</h1>
+    <p class="hero-desc">
+      Redatora, copywriter e analista de SEO com mais de 5 anos de experiência em criação de conteúdo, link building e marketing digital. Formada em Letras pela UNIFESP.
+    </p>
+    <div class="hero-cta">
+      <a href="#trabalhos" class="btn-primary">Ver trabalhos</a>
+      <a href="mailto:oui.misslari@gmail.com" class="btn-ghost">Entrar em contato</a>
+    </div>
+  </div>
+
+  <div class="hero-stats fade-up">
+    <div class="stat-item">
+      <div class="stat-number">190<span>+</span></div>
+      <div class="stat-label">links fechados<br>em parceria</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">9<span>k</span></div>
+      <div class="stat-label">sites prospectados<br>e analisados</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">5<span>+</span></div>
+      <div class="stat-label">anos de experiência<br>em conteúdo</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">60<span>+</span></div>
+      <div class="stat-label">clientes gerenciados<br>simultaneamente</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="skills-row">
+      <span class="skill-tag">SEO</span>
+      <span class="skill-tag">Link Building</span>
+      <span class="skill-tag">Copywriting</span>
+      <span class="skill-tag">Social Media</span>
+      <span class="skill-tag">Inglês Fluente</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRABALHOS -->
+<section id="trabalhos">
+  <div class="section-label">Trabalhos selecionados</div>
+  <h2 class="section-title">O que já criei & apresentei</h2>
+  <p class="section-sub">Uma seleção de projetos, participações e conteúdos publicados ao longo da carreira.</p>
+
+  <div class="work-grid">
+
+    <a href="https://www.youtube.com/watch?v=drC0YI1_Vw4" target="_blank" class="work-card">
+      <div class="card-thumb purple">
+        🎙️
+        <span class="card-type">Webinar</span>
+      </div>
+      <div class="card-body">
+        <h3>Segredos do SEO: Link Building de Qualidade</h3>
+        <p>Convidada como especialista para webinar da SendPulse sobre estratégias de link building, métricas, ferramentas e negociação de parcerias.</p>
+        <span class="card-link">Assistir no YouTube</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=vFL9RNmOy00" target="_blank" class="work-card">
+      <div class="card-thumb pink">
+        🎬
+        <span class="card-type">Webinar</span>
+      </div>
+      <div class="card-body">
+        <h3>Webinar SendPulse — Estratégias de Marketing</h3>
+        <p>Segunda participação em webinar ao vivo, abordando estratégias de crescimento orgânico e conteúdo digital.</p>
+        <span class="card-link">Assistir no YouTube</span>
+      </div>
+    </a>
+
+    <a href="https://sendpulse.com/br/blog/estrategias-de-seo-para-construir-links-de-qualidade" target="_blank" class="work-card">
+      <div class="card-thumb blue">
+        ✍️
+        <span class="card-type">Artigo</span>
+      </div>
+      <div class="card-body">
+        <h3>Estratégias de SEO para Construir Links de Qualidade</h3>
+        <p>Artigo publicado no blog oficial da SendPulse Brasil, com conteúdo aprofundado sobre link building e boas práticas de SEO.</p>
+        <span class="card-link">Ler no blog SendPulse</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=dckMC9xajmQ" target="_blank" class="work-card">
+      <div class="card-thumb green">
+        📹
+        <span class="card-type">SendCast</span>
+      </div>
+      <div class="card-body">
+        <h3>SendCast — Episódio 1</h3>
+        <p>Participação no SendCast, formato de conteúdo em vídeo da SendPulse Brasil voltado para marketing digital e crescimento orgânico.</p>
+        <span class="card-link">Assistir no YouTube</span>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=wZ0oQrH0muM" target="_blank" class="work-card">
+      <div class="card-thumb purple">
+        📹
+        <span class="card-type">SendCast</span>
+      </div>
+      <div class="card-body">
+        <h3>SendCast — Episódio 2</h3>
+        <p>Segundo episódio do SendCast com foco em estratégias práticas de SEO e link building para marcas digitais.</p>
+        <span class="card-link">Assistir no YouTube</span>
+      </div>
+    </a>
+
+    <a href="https://academy.sendpulse.com/seo-gratuito" target="_blank" class="work-card">
+      <div class="card-thumb pink">
+        🎓
+        <span class="card-type">Curso</span>
+      </div>
+      <div class="card-body">
+        <h3>Curso Gratuito de SEO — SendPulse Academy</h3>
+        <p>Contribuição para o curso de SEO da SendPulse Academy, plataforma de educação em marketing digital com alcance nacional.</p>
+        <span class="card-link">Acessar curso</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section id="resultados">
+  <div class="section-label">Números que falam</div>
+  <h2 class="section-title">Resultados em quase 3 anos<br>de link building</h2>
+  <p class="section-sub">Trabalho estratégico e orientado a dados, com foco em crescimento orgânico sustentável para a SendPulse Brasil.</p>
+
+  <div class="numbers-row">
+    <div class="num-card">
+      <div class="num-big">190<span>+</span></div>
+      <div class="num-desc">Links fechados entre guestposts, trocas de links e parcerias pagas</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">9,2<span>k</span></div>
+      <div class="num-desc">Sites prospectados e analisados com DR, tráfego orgânico e keyword ranking</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">3<span>anos</span></div>
+      <div class="num-desc">De atuação contínua em SEO e Digital PR expandindo a presença da marca</div>
+    </div>
+    <div class="num-card">
+      <div class="num-big">60<span>+</span></div>
+      <div class="num-desc">Clientes gerenciados simultaneamente na gestão editorial da Agência Moonflag</div>
+    </div>
+  </div>
+</section>
+
+<!-- FERRAMENTAS -->
+<section id="ferramentas">
+  <div class="section-label">Stack de trabalho</div>
+  <h2 class="section-title">Ferramentas & competências</h2>
+  <p class="section-sub">Do planejamento à entrega — as principais ferramentas que uso no dia a dia.</p>
+
+  <div class="tools-grid">
+    <div class="tool-item"><span class="tool-icon">🔍</span>Ahrefs</div>
+    <div class="tool-item"><span class="tool-icon">📊</span>SEMRush</div>
+    <div class="tool-item"><span class="tool-icon">📈</span>GA4</div>
+    <div class="tool-item"><span class="tool-icon">📉</span>Search Console</div>
+    <div class="tool-item"><span class="tool-icon">📋</span>Looker Studio</div>
+    <div class="tool-item"><span class="tool-icon">📬</span>BuzzStream</div>
+    <div class="tool-item"><span class="tool-icon">🔎</span>Snov.io</div>
+    <div class="tool-item"><span class="tool-icon">📝</span>WordPress</div>
+    <div class="tool-item"><span class="tool-icon">📧</span>RD Station</div>
+    <div class="tool-item"><span class="tool-icon">📑</span>Excel</div>
+    <div class="tool-item"><span class="tool-icon">🌐</span>SEOquake</div>
+    <div class="tool-item"><span class="tool-icon">✅</span>Yoast SEO</div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" style="text-align:center; background: var(--bg);">
+  <div class="section-label">Vamos conversar</div>
+  <h2 class="section-title" style="margin: 0 auto 1rem;">Aberta a novas oportunidades</h2>
+  <p class="section-sub" style="margin: 0 auto 2.5rem;">Se você tem um projeto interessante ou uma vaga para redatora, analista de SEO ou social media — adoraria ouvir sobre.</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+    <a href="mailto:oui.misslari@gmail.com" class="btn-primary">oui.misslari@gmail.com</a>
+    <a href="https://www.linkedin.com/in/larissa-scariel/" target="_blank" class="btn-ghost">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Larissa Scariel</span>
+  <div class="footer-links">
+    <a href="mailto:oui.misslari@gmail.com">E-mail</a>
+    <a href="https://www.linkedin.com/in/larissa-scariel/" target="_blank">LinkedIn</a>
+    <a href="https://www.youtube.com/watch?v=drC0YI1_Vw4" target="_blank">Webinar</a>
+  </div>
+  <span style="font-size:0.8rem;">São Paulo, SP · 2025</span>
+</footer>
+
+</body>
+</html>

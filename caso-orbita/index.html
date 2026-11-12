@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uma migração em órbita · caso fictício — Larissa Scariel</title>
+<meta name="description" content="Caso fictício com proporções reais: migração de site, saúde técnica, busca orgânica e acervo editorial de uma empresa que recruta tripulação para viagens pela Via Láctea.">
+<meta name="author" content="Larissa Scariel">
+<link rel="canonical" href="https://lariscariel.github.io/portfolio/caso-orbita/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Public+Sans:wght@350;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBFAF8;--card:#FFFFFF;--ink:#1A100B;--graphite:#6B5A50;--muted:#8C7D73;--rule:#E7E0D9;--accent:#8A3413;--tint:#F4E8DE;--deep:#35150A}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-weight:350;-webkit-font-smoothing:antialiased;line-height:1.6}
+main{max-width:58rem;margin:0 auto;padding:3rem 1.5rem 4rem}
+a{color:var(--accent)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:2.4rem}
+.field{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite)}
+h1{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.04;letter-spacing:-.015em}
+.lede{font-family:"Newsreader",Georgia,serif;font-size:1.35rem;line-height:1.4;margin-top:1rem;max-width:44rem}
+h2{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:1.9rem;line-height:1.15;margin-bottom:.6rem}
+section{margin-top:3.6rem;padding-top:1.6rem;border-top:1px solid var(--rule)}
+section>p{max-width:44rem;margin-top:.7rem}
+.grid{display:grid;gap:1rem;margin-top:1.4rem}
+.g3{grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(11rem,1fr))}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.3rem}
+.card h3{font-size:1rem;font-weight:600}
+.card p{color:var(--graphite);font-size:.95rem;margin-top:.3rem;line-height:1.5}
+.stat .n{font-family:"Newsreader",Georgia,serif;font-size:2.6rem;line-height:1;color:var(--accent)}
+.stat p{color:var(--ink)}
+.chart{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.2rem 1.2rem .8rem;margin-top:1.4rem;position:relative}
+.chart .t{font-weight:600;font-size:1rem}
+.chart .s{color:var(--graphite);font-size:.88rem}
+.chart svg{display:block;width:100%;height:auto;margin-top:.6rem;overflow:visible}
+.chart .src{color:var(--muted);font-size:.8rem;margin-top:.4rem}
+.ax text{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--muted)}
+.ax line{stroke:var(--rule);stroke-width:1}
+.lbl{font-family:"Public Sans",sans-serif;font-size:12px;fill:var(--graphite)}
+.tip{position:absolute;pointer-events:none;background:var(--deep);color:#F4E8DE;font-size:.82rem;line-height:1.35;padding:.45rem .6rem;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .12s;z-index:2}
+.tip b{font-weight:600}
+.legend{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.85rem;color:var(--graphite);margin-top:.5rem}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+details{margin-top:.6rem;font-size:.85rem;color:var(--graphite)}
+details summary{cursor:pointer;color:var(--accent)}
+table{border-collapse:collapse;width:100%;margin-top:.5rem;font-size:.85rem}
+th,td{text-align:left;padding:.3rem .5rem;border-bottom:1px solid var(--rule)}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+ol.steps{margin-top:1rem;padding-left:1.2rem;max-width:44rem}
+ol.steps li{margin-top:.55rem}
+.nota{margin-top:3.6rem;padding-top:1.4rem;border-top:1px dashed var(--rule);font-family:"Caveat",cursive;font-size:1.45rem;line-height:1.3;color:var(--accent);max-width:40rem}
+.nota .sig{display:block;margin-top:.6rem;font-size:1.9rem;transform:rotate(-2deg);transform-origin:left center}
+.back{margin-top:2.4rem;font-size:.95rem}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><span class="field" data-en="Fictional case · real proportions">Caso fictício · proporções reais</span><span><button type="button" id="lang-toggle" class="field" style="background:none;border:1px solid var(--rule);border-radius:2px;padding:3px 9px;cursor:pointer;margin-right:1rem">EN</button><a class="field" href="/portfolio/" data-en="← Portfolio">← Portfólio</a></span></div>
+
+<h1 data-en="A migration in orbit">Uma migração em órbita</h1>
+<p class="lede" data-en="Let me tell you how it went. Órbita recruits crews for trips across the Milky Way, and when I joined, its blog was practically invisible. In four months, the whole website moved to a new address without losing visits, and the articles I wrote started being cited by Google&#x27;s AI. No developer on the team, and just me on content.">Deixa eu te contar como foi. A Órbita recruta tripulação para viagens pela Via Láctea, e quando eu cheguei o blog dela era praticamente invisível. Em quatro meses, o site inteiro mudou de endereço sem perder visitas, e os textos que escrevi passaram a ser citados pela inteligência artificial do Google. Sem programador na equipe e comigo sozinha no conteúdo.</p>
+
+<section>
+<span class="field" data-en="01 · Starting point, May 245">01 · O ponto de partida, em maio de 245</span>
+<h2 data-en="What I walked into">Onde eu cheguei</h2>
+<p data-en="Picture a good shop on a street with no sign. It was pretty much that:">Pensa em uma loja boa em uma rua sem placa. Era mais ou menos isso:</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))">
+<div class="card"><h3 data-en="Hidden">Escondido</h3><p data-en="The blog didn&#x27;t even show up on the website. The only people who found it were the ones on the company&#x27;s mailing list.">O blog nem aparecia no site. Só chegava lá quem recebia os e-mails da empresa.</p></div>
+<div class="card"><h3 data-en="Invisible on Google">Invisível no Google</h3><p data-en="The articles were missing the information Google uses to understand and show a page.">Os textos não tinham as informações que o Google usa para entender e mostrar uma página.</p></div>
+<div class="card"><h3 data-en="No numbers">Sem números</h3><p data-en="Nobody could say what was working, because there was no results dashboard.">Ninguém conseguia dizer o que funcionava, porque não havia nenhum painel de resultados.</p></div>
+<div class="card"><h3 data-en="No developer">Sem programador</h3><p data-en="An agency handled the site switch. Finding what broke, saying how to fix it and checking that it was fixed was on me.">Uma agência fez a troca do site. Descobrir o que quebrou, dizer como consertar e conferir se consertou ficou comigo.</p></div>
+</div>
+</section>
+
+<section>
+<span class="field" data-en="02 · The migration, August 245">02 · A migração, em agosto de 245</span>
+<h2 data-en="The site switch: the scare and the comeback">A troca de site: o susto e a volta</h2>
+<p data-en="Switching websites is like moving house while the mail carrier still delivers to the old address: if nobody tells them, letters get lost. And mid-move, we also changed the domain address itself. So I listed every old page and where each one should lead, reviewed the new site page by page and checked the technical diagnosis every single day.">Trocar de site é como mudar de casa com o carteiro ainda entregando no endereço antigo: se ninguém avisa, as cartas se perdem. E, no meio da mudança, ainda trocamos o próprio endereço do domínio. Então listei todas as páginas antigas e para onde cada uma devia levar, revisei o site novo página por página e acompanhei o diagnóstico técnico todos os dias.</p>
+<div class="chart" id="c-health">
+<div class="t" data-en="Site technical health, day by day">Saúde técnica do site, dia a dia</div>
+<div class="s" data-en="Score from 0 to 100 from the diagnostic tool: the closer to 100, the fewer technical errors. Aug 8 to Sep 11, 245">Nota de 0 a 100 da ferramenta de diagnóstico: quanto mais perto de 100, menos erro técnico. De 08/08 a 11/09 de 245</div>
+<svg viewBox="0 0 860 300" role="img" aria-label="Linha da saúde técnica: 95 antes da migração, queda para 58 depois da troca, 87 no primeiro ajuste e 98 a partir do oitavo dia."></svg>
+<div class="tip"></div>
+<details><summary data-en="See the data as a table">Ver os dados em tabela</summary><table id="t-health"></table></details>
+</div>
+<p data-en="You can see the drop right after the switch: the score fell to 58. Eight days later it was at 98, higher than where it started, and it stayed there.">Dá para ver o tombo logo depois da troca: a nota caiu para 58. Oito dias depois estava em 98, acima de onde começou, e ficou lá.</p>
+<div class="grid g4">
+<div class="card stat"><div class="n">−100%</div><p data-en="of broken links inside the site, fixed by the end of the month">dos links quebrados dentro do site, consertados até o fim do mês</p></div>
+<div class="card stat"><div class="n">100%</div><p data-en="of pages reviewed by me before and after the switch">das páginas revisadas por mim antes e depois da troca</p></div>
+<div class="card stat"><div class="n" data-en="8 days">8 dias</div><p data-en="from the drop to a better score than before">do tombo até uma nota melhor que a de antes</p></div>
+</div>
+</section>
+
+<section>
+<span class="field" data-en="03 · Traffic during the works">03 · O tráfego durante a obra</span>
+<h2 data-en="Google visits didn&#x27;t drop. Social visits took off.">As visitas do Google não caíram. As das redes dispararam.</h2>
+<p data-en="During a site switch, losing Google visits for a while is normal. Here they stayed practically in the same place from start to finish. To make it easy to read, the first month equals 100: if the line stays near 100, nothing was lost. Visits from social media, with no ads, went to 317 in the month of the switch and to almost 500 the month after. Five times what they were at the start.">Em mudança de site, o normal é perder visita do Google por um tempo. Aqui elas ficaram praticamente no mesmo lugar do começo ao fim. Para facilitar a leitura, o primeiro mês vale 100: se a linha fica perto de 100, nada se perdeu. Já as visitas vindas das redes sociais, sem anúncio, foram para 317 no mês da troca e para quase 500 no mês seguinte. Cinco vezes mais do que no começo.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(24rem,1fr))">
+<div class="chart" id="c-search">
+<div class="t" data-en="Visits from Google">Visitas vindas do Google</div>
+<div class="s" data-en="Per day, no ads. First month = 100">Por dia, sem anúncio. Primeiro mês = 100</div>
+<svg viewBox="0 0 420 260" role="img" aria-label="Busca orgânica entre 91 e 100 em todos os meses."></svg>
+<div class="tip"></div>
+<details><summary data-en="See the data as a table">Ver os dados em tabela</summary><table id="t-search"></table></details>
+</div>
+<div class="chart" id="c-social">
+<div class="t" data-en="Visits from social media">Visitas vindas das redes sociais</div>
+<div class="s" data-en="Per day, no ads. First month = 100">Por dia, sem anúncio. Primeiro mês = 100</div>
+<svg viewBox="0 0 420 260" role="img" aria-label="Redes orgânicas: perto de 100 até julho, 317 em agosto e 499 em setembro."></svg>
+<div class="tip"></div>
+<details><summary data-en="See the data as a table">Ver os dados em tabela</summary><table id="t-social"></table></details>
+</div>
+</div>
+<p class="src" style="color:var(--muted);font-size:.85rem" data-en="The last month was still under way, but the math is per day, so it&#x27;s comparable. Social was a joint effort with design.">O último mês ainda estava em andamento, mas a conta é por dia, então dá para comparar. As redes foram um trabalho em dupla com o design.</p>
+</section>
+
+<section>
+<span class="field" data-en="04 · The articles">04 · O acervo</span>
+<h2 data-en="Fifteen articles, and Google reading all of them">Quinze textos, e o Google lendo todos eles</h2>
+<p data-en="I wrote twelve new articles and rewrote three. Each topic was chosen to answer someone in the middle of a decision, not someone who&#x27;s just curious. Today Google shows an AI-generated summary at the top of many searches, and being cited there is the new “showing up first”.">Escrevi doze artigos novos e reescrevi três. Cada tema foi escolhido para responder a quem está no meio de uma decisão, não a quem está só curioso. Hoje o Google mostra um resumo feito por inteligência artificial no topo de muitas buscas, e ser citado ali virou o novo “aparecer em primeiro”.</p>
+<div class="grid g4">
+<div class="card stat"><div class="n">100%</div><p data-en="of the articles have already appeared in Google&#x27;s AI answers">dos textos já apareceram nas respostas de IA do Google</p></div>
+<div class="card stat"><div class="n">47%</div><p data-en="on Google&#x27;s first page for each one&#x27;s main search">na primeira página do Google, na busca principal de cada um</p></div>
+<div class="card stat"><div class="n">33%</div><p data-en="cited as a source in Google&#x27;s AI summary">citados como fonte no resumo de IA do Google</p></div>
+<div class="card stat"><div class="n">20%</div><p data-en="ranked 1st on Google">em 1º lugar no Google</p></div>
+</div>
+<div class="chart" id="c-pos">
+<div class="t" data-en="Where each article shows up on Google, on average">Em que posição cada texto aparece no Google, em média</div>
+<div class="s" data-en="The further left, the closer to the top. May 29 to Sep 10, 245">Quanto mais à esquerda, mais perto do topo. De 29/05 a 10/09 de 245</div>
+<div class="legend"><span><i class="dot" style="background:var(--accent)"></i><span data-en="New article">Artigo novo</span></span><span><i class="dot" style="border:2px solid var(--accent);background:var(--card)"></i><span data-en="Rewrite">Reescrita</span></span></div>
+<svg viewBox="0 0 860 470" role="img" aria-label="Posição média dos quinze textos, entre 3,4 e 10,2."></svg>
+<div class="tip"></div>
+<details><summary data-en="See the data as a table">Ver os dados em tabela</summary><table id="t-pos"></table></details>
+</div>
+</section>
+
+<section>
+<span class="field" data-en="05 · What I did">05 · O que fiz</span>
+<h2 data-en="How I did it, no mystery">Como eu fiz, sem mistério</h2>
+<ol class="steps">
+<li data-en="Before the switch, I listed every page on the old site and decided where each one would go.">Antes da troca, listei todas as páginas do site antigo e defini para onde cada uma ia.</li>
+<li data-en="I reviewed every page on the new site and built nine of them.">Revisei todas as páginas do site novo e construí nove delas.</li>
+<li data-en="I checked the site diagnosis every day. Each error became a task, in order of importance.">Olhei o diagnóstico do site todo dia. Cada erro virou uma tarefa, na ordem de importância.</li>
+<li data-en="Before picking a topic, I researched how people search for it and who Google was already showing.">Antes de escolher o tema de um texto, pesquisei como as pessoas buscam aquilo e quem o Google já estava mostrando.</li>
+<li data-en="I planned social media from the blog, so each article sparked more than one conversation.">Planejei as redes a partir do blog, para cada texto render mais de uma conversa.</li>
+<li data-en="I built the first results dashboard for the team, so everyone looks at the same numbers.">Criei o primeiro painel de resultados da área, para todo mundo olhar os mesmos números.</li>
+</ol>
+<p data-en="If you want the technical detail on any part, just ask. I enjoy that conversation.">Se quiser o detalhe técnico de qualquer parte, é só perguntar. Eu gosto dessa conversa.</p>
+</section>
+
+<p class="nota" data-en="Method: the company, titles and dates are fictional. Months were shifted and the year became 245. Numbers became indices and percentages, rounded, and the proportions between them are those of the real work.&lt;span class=&quot;sig&quot;&gt;Larissa Scariel&lt;/span&gt;">Método: a empresa, os títulos e as datas são fictícios. Os meses foram deslocados e o ano virou 245. Os números viraram índices e percentuais, arredondados, e as proporções entre eles são as do trabalho real.<span class="sig">Larissa Scariel</span></p>
+
+<p class="back"><a href="/portfolio/" data-en="← Back to the portfolio">← Voltar ao portfólio</a></p>
+</main>
+
+<script>
+var EN=(function(){try{return localStorage.getItem('lari-lang')==='en'}catch(e){return false}})();
+function L(p,e){return EN?e:p}
+(function(){var btn=document.getElementById('lang-toggle');btn.textContent=EN?'PT':'EN';
+if(EN){document.documentElement.lang='en';document.title='A migration in orbit · fictional case — Larissa Scariel';[].forEach.call(document.querySelectorAll('[data-en]'),function(el){el.innerHTML=el.getAttribute('data-en')})}
+btn.addEventListener('click',function(){try{localStorage.setItem('lari-lang',EN?'pt':'en')}catch(e){}location.reload()})})();
+(function(){
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+function fmt(v){return EN?String(v):String(v).replace('.',',')}
+function tipAt(box,tip,html,x,y){tip.innerHTML=html;tip.style.opacity=1;var w=tip.offsetWidth,bw=box.clientWidth;var l=Math.min(Math.max(x-w/2,4),bw-w-4);tip.style.left=l+'px';tip.style.top=(y-tip.offsetHeight-12)+'px'}
+function toLocal(svg,box,vx,vy){var r=svg.getBoundingClientRect(),b=box.getBoundingClientRect(),vb=svg.viewBox.baseVal;return[ r.left-b.left+vx*r.width/vb.width, r.top-b.top+vy*r.height/vb.height ]}
+function table(id,head,rows){var t=document.getElementById(id),h='<tr>'+head.map(function(c,i){return '<th'+(i?' class="r"':'')+'>'+c+'</th>'}).join('')+'</tr>';rows.forEach(function(r){h+='<tr>'+r.map(function(c,i){return '<td'+(i?' class="r"':'')+'>'+c+'</td>'}).join('')+'</tr>'});t.innerHTML=h}
+
+/* line chart with crosshair */
+function line(boxId,data,o){
+  var box=document.getElementById(boxId),svg=box.querySelector('svg'),tip=box.querySelector('.tip');
+  var vb=svg.viewBox.baseVal,W=vb.width,H=vb.height,m={l:40,r:o.rpad||16,t:14,b:30};
+  var x=function(i){return m.l+(W-m.l-m.r)*i/(data.length-1)},y=function(v){return m.t+(H-m.t-m.b)*(1-(v-o.min)/(o.max-o.min))};
+  var ax=el('g',{'class':'ax'},svg);
+  o.ticks.forEach(function(t){el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t)},ax);var tx=el('text',{x:m.l-8,y:y(t)+4,'text-anchor':'end'},ax);tx.textContent=t});
+  data.forEach(function(d,i){if(o.xlab(i)){var tx=el('text',{x:x(i),y:H-8,'text-anchor':'middle'},ax);tx.textContent=d[0]}});
+  if(o.mark!=null){var mx=x(o.mark);el('line',{x1:mx,x2:mx,y1:m.t,y2:H-m.b,stroke:'#C9A88F','stroke-dasharray':'3 4','stroke-width':1},svg);var mt=el('text',{x:mx+6,y:H-m.b-8,'class':'lbl'},svg);mt.textContent=o.markLabel}
+  var d='';data.forEach(function(p,i){d+=(i?'L':'M')+x(i)+' '+y(p[1])});
+  el('path',{d:d,fill:'none',stroke:'#8A3413','stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+  (o.labels||[]).forEach(function(i){var p=data[i];el('circle',{cx:x(i),cy:y(p[1]),r:4,fill:'#8A3413',stroke:'#fff','stroke-width':2},svg);var t=el('text',{x:x(i),y:y(p[1])-10,'text-anchor':'middle','class':'lbl'},svg);t.textContent=fmt(p[1])});
+  var cross=el('line',{y1:m.t,y2:H-m.b,stroke:'#6B5A50','stroke-width':1,opacity:0},svg),hd=el('circle',{r:5,fill:'#8A3413',stroke:'#fff','stroke-width':2,opacity:0},svg);
+  var hit=el('rect',{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b,fill:'transparent'},svg);
+  function move(ev){var r=svg.getBoundingClientRect(),vx=(ev.clientX-r.left)*W/r.width;var i=Math.round((vx-m.l)/(W-m.l-m.r)*(data.length-1));i=Math.max(0,Math.min(data.length-1,i));var p=data[i];cross.setAttribute('x1',x(i));cross.setAttribute('x2',x(i));cross.setAttribute('opacity',.5);hd.setAttribute('cx',x(i));hd.setAttribute('cy',y(p[1]));hd.setAttribute('opacity',1);var L=toLocal(svg,box,x(i),y(p[1]));tipAt(box,tip,'<b>'+(o.tipLabel?o.tipLabel(i):p[0])+'</b><br>'+o.unit+fmt(p[1]),L[0],L[1])}
+  hit.addEventListener('mousemove',move);hit.addEventListener('touchstart',function(e){move(e.touches[0])},{passive:true});
+  hit.addEventListener('mouseleave',function(){tip.style.opacity=0;cross.setAttribute('opacity',0);hd.setAttribute('opacity',0)});
+}
+
+/* 1. health, daily, 08/08 to 11/09 of 245 */
+var H=[];var start=new Date(2025,7,8);
+for(var k=0;k<35;k++){var dt=new Date(start.getTime()+k*864e5),day=dt.getDate(),mo=dt.getMonth()+1;
+  var v=(k===0)?95:(k<=4)?96:(k<=6)?83:(k<=11)?58:(k<=13)?87:(k===14)?96:98;
+  H.push([('0'+day).slice(-2)+'/'+('0'+mo).slice(-2),v]);}
+line('c-health',H,{min:40,max:100,ticks:[40,60,80,100],unit:L('Pontuação: ','Score: '),mark:7,markLabel:L('depois da troca','after the switch'),labels:[7,12,15,34],xlab:function(i){return i%7===0||i===34},tipLabel:function(i){return H[i][0]+'/245'}});
+table('t-health',[L('Dia (245)','Day (245)'),L('Pontuação','Score')],H.map(function(p){return [p[0],p[1]]}));
+
+/* 2 and 3. monthly indices */
+var M=EN?['apr','may','jun','jul','aug','sep*']:['abr','mai','jun','jul','ago','set*'];
+var S=[100,92.6,93.5,95.4,96.0,91.4],R=[100,98.8,84.4,125.5,317,499];
+line('c-search',M.map(function(m,i){return[m,S[i]]}),{min:0,max:120,ticks:[0,50,100],unit:L('Índice: ','Index: '),mark:4,markLabel:L('migração','migration'),labels:[4,5],xlab:function(){return true},rpad:24});
+line('c-social',M.map(function(m,i){return[m,R[i]]}),{min:0,max:520,ticks:[0,100,250,500],unit:L('Índice: ','Index: '),mark:4,markLabel:L('migração','migration'),labels:[4,5],xlab:function(){return true},rpad:24});
+table('t-search',[L('Mês (245)','Month (245)'),L('Índice','Index')],M.map(function(m,i){return[m,fmt(S[i])]}));
+table('t-social',[L('Mês (245)','Month (245)'),L('Índice','Index')],M.map(function(m,i){return[m,fmt(R[i])]}));
+
+/* 4. positions, dot strip */
+var P=[
+[L('Como escolher um sistema de triagem','How to choose a screening system'),4.9,0],[L('Banco de tripulantes','Crew talent pool'),3.4,1],[L('Agendar entrevista entre fusos planetários','Scheduling interviews across planetary time zones'),7.7,0],[L('Alinhamento com comandantes','Aligning with commanders'),5.5,1],
+[L('Glossário do painel de bordo','Cockpit dashboard glossary'),10.0,0],[L('Recrutamento para frotas pequenas','Recruiting for small fleets'),7.4,0],[L('Dados de candidato e o tratado de privacidade','Candidate data and the privacy treaty'),5.5,0],[L('Retorno do sistema de triagem','Return on a screening system'),4.7,0],
+[L('Entrevista por holograma','Hologram interviews'),8.7,0],[L('Triagem para hotelaria orbital','Screening for orbital hospitality'),5.7,0],[L('Avaliar pilotos de nave','Assessing starship pilots'),8.4,0],[L('Entrevista estruturada em gravidade zero','Structured interviews in zero gravity'),10.2,1],
+[L('Prazo de resposta entre estações','Response time between stations'),8.9,0],[L('Contratação para a temporada de cometas','Hiring for comet season'),7.2,0],[L('Recrutamento por rádio subespacial','Recruiting over subspace radio'),6.7,0]];
+(function(){
+  var box=document.getElementById('c-pos'),svg=box.querySelector('svg'),tip=box.querySelector('.tip'),W=860,m={l:300,r:24,t:10,b:30},rowH=28;
+  var x=function(v){return m.l+(W-m.l-m.r)*(v-1)/(11-1)};
+  var ax=el('g',{'class':'ax'},svg),Hh=m.t+P.length*rowH;
+  [1,3,5,7,9,11].forEach(function(t){el('line',{x1:x(t),x2:x(t),y1:m.t,y2:Hh},ax);var tx=el('text',{x:x(t),y:Hh+18,'text-anchor':'middle'},ax);tx.textContent=t});
+  P.forEach(function(p,i){var cy=m.t+rowH*i+rowH/2;
+    var t=el('text',{x:m.l-12,y:cy+4,'text-anchor':'end','class':'lbl'},svg);t.textContent=p[0];
+    el('line',{x1:x(1),x2:x(p[1]),y1:cy,y2:cy,stroke:'#E7E0D9','stroke-width':2},svg);
+    el('circle',{cx:x(p[1]),cy:cy,r:6,fill:p[2]?'#fff':'#8A3413',stroke:'#8A3413','stroke-width':2},svg);
+    var hit=el('rect',{x:0,y:cy-rowH/2,width:W,height:rowH,fill:'transparent'},svg);
+    hit.addEventListener('mousemove',function(){var L=toLocal(svg,box,x(p[1]),cy);tipAt(box,tip,'<b>'+p[0]+'</b><br>'+(p[2]?L('Reescrita','Rewrite'):L('Artigo novo','New article'))+L(' · posição média ',' · average position ')+fmt(p[1].toFixed(1)),L[0],L[1])});
+    hit.addEventListener('mouseleave',function(){tip.style.opacity=0});
+  });
+  svg.setAttribute('viewBox','0 0 '+W+' '+(Hh+m.b));
+  table('t-pos',[L('Texto','Article'),L('Tipo','Type'),L('Posição média','Average position')],P.map(function(p){return[p[0],p[2]?L('Reescrita','Rewrite'):L('Novo','New'),fmt(p[1].toFixed(1))]}));
+})();
+})();
+</script>
+</body>
+</html>

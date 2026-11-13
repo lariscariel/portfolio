@@ -229,17 +229,12 @@ footer a{font-size:13.5px}
   <div class="section-head">
     <span class="n-section">01 · Diagnóstico</span>
     <h2>Mapear antes de mover</h2>
-    <p>Antes de qualquer redirect, o problema precisa virar inventário. A auditoria mapeou o que estava quebrado, o que estava redundante e o que ia para a migração sem condição de ranquear.</p>
+    <p>O primeiro passo foi entender o que havia lá. Rodei o Screaming Frog em todo o domínio e classifiquei cada problema - links quebrados, redirects temporários, páginas sem nenhum link interno, canônicos errados, títulos duplicados. Só depois de ter esse mapa é que fazia sentido falar em migração.</p>
   </div>
 
   <div class="chart-wrap">
     <div class="chart-title">Distribuição dos erros no rastreamento pré-migração</div>
-    <svg class="bar-chart" viewBox="0 0 680 260" role="img" aria-label="Gráfico de barras: tipos de erros encontrados na auditoria técnica pré-migração">
-      <defs>
-        <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#E7E0D9" stroke-width="2"/>
-        </pattern>
-      </defs>
+    <svg class="bar-chart" viewBox="0 0 680 300" role="img" aria-label="Gráfico de barras: tipos de erros encontrados na auditoria técnica pré-migração">
       <!-- eixo Y -->
       <line x1="140" y1="20" x2="140" y2="210" class="axis"/>
       <!-- eixo X -->
@@ -256,25 +251,25 @@ footer a{font-size:13.5px}
       <!-- barras -->
       <rect x="156" y="47" width="72" height="163" class="val-before" rx="2"/>
       <text x="192" y="42" text-anchor="middle" class="label-row">422</text>
-      <text x="192" y="232" text-anchor="middle">Links quebrados</text>
+      <text transform="translate(192,220) rotate(-35)" text-anchor="end" class="label-row">Links quebrados</text>
       <rect x="264" y="96" width="72" height="114" class="val-before" rx="2"/>
       <text x="300" y="91" text-anchor="middle" class="label-row">228</text>
-      <text x="300" y="232" text-anchor="middle">Páginas isoladas</text>
+      <text transform="translate(300,220) rotate(-35)" text-anchor="end" class="label-row">Páginas isoladas</text>
       <rect x="372" y="123" width="72" height="87" class="val-before" rx="2"/>
       <text x="408" y="118" text-anchor="middle" class="label-row">174</text>
-      <text x="408" y="232" text-anchor="middle">Redirects 302</text>
+      <text transform="translate(408,220) rotate(-35)" text-anchor="end" class="label-row">Redirects 302</text>
       <rect x="480" y="147" width="72" height="63" class="val-before" rx="2"/>
       <text x="516" y="142" text-anchor="middle" class="label-row">126</text>
-      <text x="516" y="232" text-anchor="middle">Títulos duplicados</text>
+      <text transform="translate(516,220) rotate(-35)" text-anchor="end" class="label-row">Títulos duplicados</text>
       <rect x="588" y="183" width="52" height="27" class="val-before" rx="2"/>
       <text x="614" y="178" text-anchor="middle" class="label-row">54</text>
-      <text x="614" y="232" text-anchor="middle">Canonical errado</text>
+      <text transform="translate(614,220) rotate(-35)" text-anchor="end" class="label-row">Canonical errado</text>
     </svg>
     <div class="chart-note">Rastreamento Screaming Frog · inventário pré-migração · dados ficcionais</div>
   </div>
 
   <div class="nota-box">
-    <p><strong>O que a auditoria mostrou:</strong> o maior volume era de links internos quebrados — mais do que duplicatas ou redirects errados. Isso significava que o site não distribuía pagerank para as páginas que precisavam ranquear. Corrigir links internos antes do go-live foi a primeira decisão.</p>
+    <p>O volume maior era de links internos quebrados - mais do que duplicatas ou redirects errados. O site não distribuía autoridade para as páginas que precisavam aparecer. Essa foi a primeira coisa a corrigir, antes de qualquer mudança de endereço.</p>
   </div>
 </section>
 
@@ -283,7 +278,7 @@ footer a{font-size:13.5px}
   <div class="section-head">
     <span class="n-section">02 · Links internos</span>
     <h2>422 links quebrados.<br><em>Zero era o destino.</em></h2>
-    <p>Cada link interno quebrado é um caminho morto para o Googlebot. Corrigir todos antes do go-live foi pré-requisito — não tarefa pós-migração.</p>
+    <p>Corrigi os 422 antes de mexer em qualquer URL. Alguns apontavam para páginas que iam sumir na migração - esses foram redirecionados para o equivalente mais próximo. As quatro páginas que ficaram sem link interno são novas, criadas no go-live, e estão no calendário para receber links nos próximos dois meses.</p>
   </div>
 
   <div class="compare">
@@ -327,7 +322,7 @@ footer a{font-size:13.5px}
     </div>
   </div>
 
-  <p style="color:var(--graphite);font-size:14.5px">As quatro páginas que ficaram sem link interno são páginas novas criadas no go-live. Estão no calendário de conteúdo para receber links nos próximos dois meses.</p>
+
 </section>
 
 <!-- ETAPA 3 -->
@@ -335,7 +330,7 @@ footer a{font-size:13.5px}
   <div class="section-head">
     <span class="n-section">03 · Redirects</span>
     <h2>Nenhum redirect apontando<br><em>para redirect.</em></h2>
-    <p>Chains de redirect sangram autoridade a cada salto. O mapa foi construído a partir da estrutura atual — cada URL de origem resolvida direto para o destino final, sem intermediários.</p>
+    <p>Montei um mapa com cada URL de origem apontando direto para o destino final. Sem passar por outro redirect no caminho.</p>
   </div>
 
   <div class="chart-wrap">
@@ -376,7 +371,7 @@ footer a{font-size:13.5px}
   </div>
 
   <div class="nota-box">
-    <p><strong>O detalhe que muda tudo:</strong> muitos dos 302 eram redirects de campanha que ficaram permanentes sem ser reconvertidos. Cada um deles era um vazamento de autoridade que ninguém tinha corrigido porque ninguém sabia que o endereço ainda existia.</p>
+    <p>Boa parte dos 302 eram redirects de campanha que nunca foram reconvertidos. Ficaram lá, esquecidos, porque ninguém sabia que o endereço ainda existia. Convertê-los para 301 e apontar direto para o destino final foi uma das partes mais silenciosas do projeto - e uma das mais importantes.</p>
   </div>
 </section>
 
@@ -385,7 +380,7 @@ footer a{font-size:13.5px}
   <div class="section-head">
     <span class="n-section">04 · Structured data</span>
     <h2>Da categoria invisível<br><em>ao sitelink no resultado.</em></h2>
-    <p>As páginas de categoria não tinham structured data. Nenhuma. O Google as via como listas sem contexto. Implementar BreadcrumbList e ItemList nas categorias foi parte do escopo da migração — não item de backlog.</p>
+    <p>As categorias do site não tinham structured data - nenhuma. Incluí BreadcrumbList e ItemList no escopo da migração porque a janela em que o Googlebot rastreia mais intensamente é logo depois do go-live. Deixar para depois seria desperdiçar exatamente esse momento.</p>
   </div>
 
   <div class="stat-row">
@@ -404,7 +399,7 @@ footer a{font-size:13.5px}
   </div>
 
   <div class="nota-box">
-    <p><strong>Por que fazia sentido incluir na migração:</strong> mudar as URLs sem implementar estrutura seria perder a janela em que o Googlebot rastreia o site mais intensamente. Depois do go-live, o rastreamento normaliza. A migração é o melhor momento para introduzir marcação — não o pior.</p>
+    <p>Validei tudo no Rich Results Test antes do go-live. Zero erros. Três das onze categorias estavam elegíveis para sitelink nos primeiros 60 dias.</p>
   </div>
 </section>
 
@@ -413,7 +408,7 @@ footer a{font-size:13.5px}
   <div class="section-head">
     <span class="n-section">05 · Processo</span>
     <h2>O que veio antes<br><em>do primeiro redirect.</em></h2>
-    <p>Uma migração que começa pela planilha de redirecionamentos já começou no lugar errado. Essa começou pelo inventário.</p>
+    <p>A planilha de redirects foi o documento de aprovação antes de qualquer implementação. Mas ela só existia porque tudo que vinha antes dela já estava resolvido.</p>
   </div>
 
   <div class="timeline">
@@ -422,7 +417,7 @@ footer a{font-size:13.5px}
       <div class="tl-body">
         <div class="tl-date">Semana 1–2</div>
         <div class="tl-title">Rastreamento completo e inventário</div>
-        <p class="tl-desc">Screaming Frog em todas as URLs do domínio atual. Classificação de cada tipo de erro — links quebrados, redirects temporários, páginas sem link interno, canônicos incorretos, títulos duplicados.</p>
+        <p class="tl-desc">Screaming Frog em todas as URLs do domínio atual. Classificação de cada tipo de erro - links quebrados, redirects temporários, páginas sem link interno, canônicos incorretos, títulos duplicados.</p>
       </div>
     </div>
     <div class="tl-item">
@@ -430,7 +425,7 @@ footer a{font-size:13.5px}
       <div class="tl-body">
         <div class="tl-date">Semana 3</div>
         <div class="tl-title">Mapa de URLs: o que fica, o que muda, o que some</div>
-        <p class="tl-desc">Cada URL classificada em três grupos: mantida, redirecionada ou descontinuada. Sem mapa completo, não existe planilha de redirect — existe suposição.</p>
+        <p class="tl-desc">Cada URL classificada em três grupos: mantida, redirecionada ou descontinuada. Sem mapa completo, não existe planilha de redirect - existe suposição.</p>
       </div>
     </div>
     <div class="tl-item">
@@ -438,7 +433,7 @@ footer a{font-size:13.5px}
       <div class="tl-body">
         <div class="tl-date">Semana 4–5</div>
         <div class="tl-title">Correção dos links internos no ambiente atual</div>
-        <p class="tl-desc">422 links internos corrigidos antes de migrar uma linha de código. Páginas de destino validadas. Algumas apontavam para URLs que iam ser descontinuadas — esses foram redirecionados para o equivalente mais próximo.</p>
+        <p class="tl-desc">422 links internos corrigidos antes de migrar uma linha de código. Páginas de destino validadas. Algumas apontavam para URLs que iam ser descontinuadas - esses foram redirecionados para o equivalente mais próximo.</p>
       </div>
     </div>
     <div class="tl-item">
@@ -474,8 +469,8 @@ footer a{font-size:13.5px}
     <span class="n-section">Leitura do resultado</span>
     <h2>O que os gráficos<br><em>não mostram.</em></h2>
   </div>
-  <p style="max-width:62ch;color:var(--graphite)">O Health Score saiu de 58 para 98. Isso é visível. O que não aparece no gráfico é a decisão de mapear antes de mover — e de incluir structured data na migração em vez de deixar para depois.</p>
-  <p style="max-width:62ch;color:var(--graphite)">Migrações que começam pela planilha de redirect chegam ao go-live sem saber o que tem quebrado. Este caso começou pelo inventário. A diferença está nos números.</p>
+  <p style="max-width:62ch;color:var(--graphite)">O Health Score saiu de 58 para 98. Os 422 links quebrados viraram zero. As 228 páginas isoladas viraram 4. Onze categorias ganharam structured data no go-live.</p>
+  <p style="max-width:62ch;color:var(--graphite)">Esses números existem porque o inventário veio antes do redirect, e o structured data entrou no escopo em vez de ficar no backlog. Duas decisões de processo. O resto é consequência.</p>
 
   <div style="margin:48px 0 0;display:flex;gap:16px;flex-wrap:wrap">
     <span class="pill ok">Health Score +40 pontos</span>
